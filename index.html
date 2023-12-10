@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Functions</title>
+</head>
+<body>
+
+
+    <div class="container">
+
+    <aside class="condition"> 
+
+            <div id="condition1"> 
+                
+                <p>დაწერე ფუნქცია, რომელიც მიიღებს სამ პარამეტრს (string, valueToReplace, valueToReplaceWith),
+                     ჩაანაცვლებს "valueToReplace"-ს "valueToReplaceWith" მნიშვნელობით და დააბრუნებს ახალ stringს.
+                     არ გამოიყენო string.replace() ფუნქცია</p>
+                
+                
+                </div>
+            <div id="condition2">
+                    <p>
+                        დაწერე ფუნქცია, რომელიც პარამეტრად მიიღებს string ტიპის მნიშვნელობას
+                         (წინადადებას), მასში ყოველ სიტყვას გადაწერს დიდი ასოთი და დააბრუნებს ახალ წინადადებას
+                    </p>
+
+            </div>
+            <div id="condition3">
+                <p>
+                    დაწერე ფუნქცია, რომელიც პარამეტრად მიიღებს მომხმარებლების მასივს და დააბრუნებს
+                     დალაგებულ მასივს მომხმარებლების ასაკის ზრდადობის მიხედვითმაგალითად, ჩავთვალოთ, 
+                     რომ გვაქვს [{name: ‘Lasha’, age: 30}, {name: ‘Saba’, age: 20}].
+                      ფუნქციამ უნდა დააბრუნოს [{name: ‘Saba’, age: 20}, {name: ‘Lasha’, age: 30}]
+                      შეგიძლია გამოიყენო sort() ფუნქცია
+                </p>
+            </div>
+    
+    </aside>
+
+            <div  class="cont"> 
+
+                <div class="buttons">
+                <button id="homework1">Function 1</button>
+                <button id="homework2">Function 2</button>
+                <button id="homework3">Function 3</button>
+                </div>
+
+                    <div class="restart">
+                        <a  href="index.html"> <h6>Clear Consol</h6> </a>                  
+                    </div>
+                
+
+                <div class="console"></div>
+
+            </div>
+            <aside class="functions">
+
+
+                    <div id="function1">
+          
+<pre>
+
+    const replace = (string, valueToReplace, valueToReplaceWith) => {
+
+
+        const result = [];
+    
+        const words = string.split(" ");
+
+    for (const word of words) {
+        
+        if (word === valueToReplace) {
+            result.push(valueToReplaceWith);
+        } 
+        
+        else {
+            result.push(word);
+        }
+
+    }
+
+    return result.join(" ");
+}
+
+
+console.log(replace("javascript is not programming language", 
+'javascript', 'css'  ))
+</pre>
+
+                        </div>
+                        
+
+
+                       <div id="function2">
+<pre>
+    const capitalWords = (string) => {
+
+
+        const newstring = [];
+        
+        const words = string.split(" ");
+        
+        for (const el of words){
+            const upper = el[0].toUpperCase() + el.slice(1)
+    
+            newstring.push(upper)
+        }
+        
+        return newstring.join(" ");
+    }
+    
+    
+    console.log(capitalWords("css is not programming language ,
+     javascript is a programing language",  ))
+</pre>
+                       
+    
+
+                   
+
+                       </div> 
+
+
+
+                       <div id="function3">
+
+<pre>
+    const users = [
+    {name: "Lasha", age: 30}, 
+    {name: "Saba", age: 20},
+    {name: "Nika", age: 23},
+    {name: "Suliko", age: 35},
+    {name: "Jemali", age: 64},
+    {name: "Badri", age: 51},
+
+]
+
+
+
+
+const sortFunction = (users) => {
+
+users.sort((a, b) => a.age - b.age);
+// თუ შედეგი უარყოფითია,  a ობიექტი უნდა იყოს b ობიექტამდე მასივში,
+// თუ შედეგი დადებითია,  b ობიექტი უნდა იყოს a ობიექტის წინ .
+
+
+
+return users
+}
+
+
+console.log(sortFunction(users.sort()))
+</pre>
+
+
+                       </div> 
+            
+            </aside>
+            
+        </div>
+          
+
+            
+    <script src="app.js"></script>
+</body>
+</html>
